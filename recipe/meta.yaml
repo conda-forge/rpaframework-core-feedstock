@@ -1,29 +1,35 @@
 {% set name = "rpaframework-core" %}
-{% set version = "6.6.1" %}
-
+{% set version = "11.0.5" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework-core-{{ version }}.tar.gz
-  sha256: 3aad80c2cc541d27f815805c7da179ab9e08d15ecb9ab9fbeac7e9bf90f89665
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework_core-{{ version }}.tar.gz
+  sha256: 7e354b275d3a940921b842004c2dbfc2f71b957a73ba1db0be1c41458e2e08d4
 
 build:
-  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
+  number: 0
 
 requirements:
   host:
+    - python >=3.7,<4.0
+    - poetry-core >=1.0.0
     - pip
-    - poetry
-    - python >=3.6,<4.0
+
   run:
-    - python >=3.6,<4.0
-    - selenium >=3.141.0,<4.0.0
-    - webdrivermanager >=0.10.0,<0.11.0
+    - python >=3.7.0,<4.0.0
+    - selenium >=4.6.1,<5.0.0
+    - webdriver-manager >=3.9.1,<4.0.0
+    - pillow >=9.1.1,<10.0.0
+    - packaging >=21.3,<24
+    
+    #- psutil >=5.9.0,<6.0.0
+    #- pywin32-on-windows >=300,<304
+    #- uiautomation >=2.0.15,<3.0.0
 
 test:
   imports:
