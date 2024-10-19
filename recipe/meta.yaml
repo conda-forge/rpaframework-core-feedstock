@@ -32,6 +32,7 @@ requirements:
     - pillow >=9.1.1,<10.0.0
     - packaging >=23.1.0,<24.0.0
     - uiautomation >=2.0.15,<3.0.0  # [win]
+    - comtypes >=1.1.10  # [win]
     - __linux  # [linux]
     - __osx    # [osx]
     - __win    # [win]
@@ -39,15 +40,18 @@ requirements:
 test:
   imports:
     - RPA
-    - RPA.core  # [linux]
+    - RPA.core
   commands:
     - pip check
   requires:
     - pip
-# import: 'RPA.core' Failure: uiautomation 2.0.18 requires typing, which is not installed.    
-    - typing
-# import: 'RPA.core' Failure: rpaframework-core 11.2.0 has requirement pywin32<304,>=300    
-    - pywin32 >=300,<304
+# import: 'RPA.core' Failure: uiautomation 2.0.18 requires typing, which is not installed.
+    - uiautomation >=2.0.15,<3.0.0  # [win]
+    - typing  # [win]
+    - comtypes >=1.1.10  # [win]
+# import: 'RPA.core' Failure: rpaframework-core 11.2.0 has requirement pywin32<304,>=300
+    - pywin32-on-windows  # [win]
+    - pywin32 >=300,<304  # [win]
 
 about:
   home: https://rpaframework.org/
