@@ -27,11 +27,11 @@ requirements:
     - pywin32-on-windows
 # PiP Check Failure:rpaframework-core 11.2.0 has requirement pywin32<304,>=300    
     - pywin32 >=300,<304
-    - uiautomation >=2.0.15,<3.0.0  # [win]
 # PiP Check Failure: uiautomation 2.0.18 requires typing, which is not installed.    
     - typing
     - pillow >=9.1.1,<10.0.0
     - packaging >=23.1.0,<24.0.0
+    - uiautomation >=2.0.15,<3.0.0  # [win]
     - __linux  # [linux]
     - __osx    # [osx]
     - __win    # [win]
