@@ -39,7 +39,7 @@ requirements:
 test:
   imports:
     - RPA
-    - RPA.core
+    - RPA.core  # [linux]
   commands:
     - pip check
   requires:
