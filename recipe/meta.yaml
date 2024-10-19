@@ -25,7 +25,7 @@ requirements:
     - webdriver-manager ==4.0.0
     - psutil >=5.9.0,<6.0.0
     - pywin32-on-windows
-# PiP Check Failure:rpaframework-core 11.2.0 has requirement pywin32<304,>=300    
+# PiP Check Failure: rpaframework-core 11.2.0 has requirement pywin32<304,>=300    
     - pywin32 >=300,<304
 # PiP Check Failure: uiautomation 2.0.18 requires typing, which is not installed.    
     - typing
@@ -44,6 +44,10 @@ test:
     - pip check
   requires:
     - pip
+# import: 'RPA.core' Failure: uiautomation 2.0.18 requires typing, which is not installed.    
+    - typing
+# import: 'RPA.core' Failure: rpaframework-core 11.2.0 has requirement pywin32<304,>=300    
+    - pywin32 >=300,<304
 
 about:
   home: https://rpaframework.org/
