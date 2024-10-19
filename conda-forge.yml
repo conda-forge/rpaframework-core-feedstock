@@ -1,8 +1,13 @@
 conda_forge_output_validation: true
 bot:
   automerge: true
+  inspection: update-grayskull
 github:
   branch_name: main
   tooling_branch_name: main
 conda_build:
   pkg_format: '2'
+noarch_platforms:
+  - win_64
+  - linux_64
+  - osx_64
