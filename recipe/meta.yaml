@@ -1,5 +1,5 @@
 {% set name = "rpaframework-core" %}
-{% set version = "11.0.5" %}
+{% set version = "11.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework_core-{{ version }}.tar.gz
-  sha256: 7e354b275d3a940921b842004c2dbfc2f71b957a73ba1db0be1c41458e2e08d4
+  sha256: e15e8bc3a4b058e4bb627c7cc42fe594f3ff750f7cdfa178b886b18fe6514af2
 
 build:
   noarch: python
@@ -26,7 +26,7 @@ requirements:
     - webdriver-manager >=3.9.1,<4.0.0
     - pillow >=9.1.1,<10.0.0
     - packaging >=21.3,<24
-    
+
     #- psutil >=5.9.0,<6.0.0
     #- pywin32-on-windows >=300,<304
     #- uiautomation >=2.0.15,<3.0.0
