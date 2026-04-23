@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/rpaframework_core-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/rpaframework_core-{{ version }}.tar.gz
   sha256: 7e354b275d3a940921b842004c2dbfc2f71b957a73ba1db0be1c41458e2e08d4
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 2
 
 requirements:
   host:
-    - python >=3.7,<4.0
+    - python {{ python_min }}
     - poetry-core >=1.0.0
     - pip
 
   run:
-    - python >=3.7.0,<4.0.0
+    - python >={{ python_min }},<4.0.0
     - selenium >=4.6.1,<5.0.0
     - webdriver-manager >=3.9.1,<4.0.0
     - pillow >=9.1.1,<10.0.0
@@ -39,6 +39,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://rpaframework.org/
